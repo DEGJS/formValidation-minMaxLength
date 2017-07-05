@@ -1,10 +1,10 @@
 const minMaxLength = (options) => {
 
     const defaults = {
-        message: 'Please enter at least [minToken] characters.',
+        message: 'Please enter a value between [minToken] and [maxToken] characters.',
         messageAttr: 'data-validation-minmaxlength-message',
-        minVal: '10',
-        maxVal: '50',
+        minAttr: 'data-minlength',
+        maxAttr: 'maxlength',
         minToken: '[minToken]',
         maxToken: '[maxToken]',
         events: [
@@ -19,7 +19,7 @@ const minMaxLength = (options) => {
     }
 
     const isRelevant = (field) => {
-        return field.inputEls.some(el => el.getAttribute('minlength') !== null || el.getAttribute('maxlength') !== null);
+        return field.inputEls.some(el => el.getAttribute(settings.minAttr) !== null || el.getAttribute(settings.maxAttr) !== null);
     }
 
     const validate = (field) => {
@@ -37,12 +37,12 @@ const minMaxLength = (options) => {
     }
 
     const meetsMin = (el) => {
-		let minVal = el.getAttribute('minlength');
+		let minVal = el.getAttribute(settings.minAttr);
 		return minVal === null ? true : el.value.length >= parseInt(minVal);
 	}
 
 	const meetsMax = (el) => {
-		let maxVal = inputEl.getAttribute('maxlength');
+		let maxVal = inputEl.getAttribute(settings.maxAttr);
 		return maxVal === null ? true : el.value.length <= parseInt(maxVal);
 	}
 
