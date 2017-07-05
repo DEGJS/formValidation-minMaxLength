@@ -1,7 +1,4 @@
 # formValidation-minMaxLength
-A minlength/maxlength rule for the DEGJS formValidation module.
-
-# formValidation-minMaxLength
 A minlength/maxlength rule module for the DEGJS [formValidation](https://github.com/DEGJS/formValidation) module.
 
 
