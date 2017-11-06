@@ -12,23 +12,21 @@ const minMaxLength = (options) => {
             'submit'
         ]
     };
-    let settings = Object.assign({}, defaults, options);
+    let settings = {...defaults, ...options};
 
-    const getSettings = () => {
+    function getSettings() {
         return settings;
     }
 
-    const isRelevant = (field) => {
+    function isRelevant(field) {
         return field.inputEls.some(el => el.getAttribute(settings.minAttr) !== null || el.getAttribute(settings.maxAttr) !== null);
     }
 
-    const validate = (field) => {
-        return new Promise(function(resolve, reject) {
+    function validate(field) {
+        return new Promise((resolve, reject) => {
             if (field.inputEls) {
                 resolve({
-                    valid: field.inputEls.some(el => {
-                    	return meetsMin(el) && meetsMax(el);
-                    }
+                    valid: field.inputEls.some(el => meetsMin(el) && meetsMax(el))
                 });
             } else {
                 reject('required: No inputs set.');
@@ -36,17 +34,17 @@ const minMaxLength = (options) => {
         });
     }
 
-    const meetsMin = (el) => {
-		let minVal = el.getAttribute(settings.minAttr);
+    function meetsMin(el) {
+		const minVal = el.getAttribute(settings.minAttr);
 		return minVal === null ? true : el.value.length >= parseInt(minVal);
 	}
 
-	const meetsMax = (el) => {
-		let maxVal = inputEl.getAttribute(settings.maxAttr);
+	function meetsMax(el) {
+		const maxVal = inputEl.getAttribute(settings.maxAttr);
 		return maxVal === null ? true : el.value.length <= parseInt(maxVal);
 	}
 
-    const postprocessMessage = (msg) => {
+    function postprocessMessage(msg) {
         if (settings.postprocessMessage && typeof settings.postprocessMessage === 'function') {
             return settings.postprocessMessage(msg, settings);
         } else {
@@ -63,6 +61,6 @@ const minMaxLength = (options) => {
         postprocessMessage: postprocessMessage
     };
 
-}
+};
 
 export default minMaxLength;
