@@ -40,7 +40,7 @@ const minMaxLength = (options) => {
 	}
 
 	function meetsMax(el) {
-		const maxVal = inputEl.getAttribute(settings.maxAttr);
+		const maxVal = el.getAttribute(settings.maxAttr);
 		return maxVal === null ? true : el.value.length <= parseInt(maxVal);
 	}
 
