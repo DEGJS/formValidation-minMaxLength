@@ -26,7 +26,7 @@ const minMaxLength = (options) => {
         return new Promise((resolve, reject) => {
             if (field.inputEls) {
                 resolve({
-                    valid: field.inputEls.some(el => meetsMin(el) && meetsMax(el))
+                    valid: field.inputEls.some(el => el.length === 0 || (el.length > 0 && meetsMin(el) && meetsMax(el)))
                 });
             } else {
                 reject('required: No inputs set.');
