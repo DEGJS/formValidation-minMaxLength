@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- node
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: npm
+  email: scheul93@gmail.com
+  api_key:
+    secure: lcp43AA1VeVO7CGZzdOu9nlLW/YXwe7a1lmQ59/ziZdV1L3jA8liXOP/KOWUMpz/+Dw5v2IcU6MHgcTJE0HBu4wVm2dV1rpkNQGe2xSU0Xx58lWbNK+09Lkdbtk61liO2F9ZExpTyTEdonQI2pXGu6xeIjHG+JKa6M9Jjtu2MtxaSEhBF84C7oyTIdfTBBfvHz/paARj5umOA2L4PCKAEGChaxgfVDgOBjOQQz9zXLqRk3Jz/y2Ct2SjGLJsDHrEJPl3MMPoH3pQkUMyWf+EGC4Hkkg4CXGC8MX8rlMhQoL3stpjrkVKr3P8bTyw5qWw0R1ceqge7TUWXJScMCqRuZXxJSPKTVXHYqWQJUAY+dg+D0hqJKIVOVVnGkB2+iDjCcMJaYmsCfKLpOqbml4v1FRSerQgouzNhpVqIj1rT2Fq18TE0OVgtMAi3MCh2EWCPhqryPLUoTyh8NHOyrqoPLximgcB4YKW3mrtY8pz5E1muh7PL36BI9cCgL544Wyj4At6xv3uiWdTlZSXRUkAnxgfO+wQE9DOwGat08dyM0QdWnZ5xFMkNL+TFhWKHzgaEgKEqGQeLGVQ20BjtmtTWSqDfXNSJs6nOfNEPzjc6B2iP25MiWm64xruSjqu6mNV5zAvgE9gxt3kZbLwbnVkYrIOpEyMQAt7c/bMe1JwT0M=
+  on:
+    tags: true
+    branch: master
+    repo: DEGJS/formValidation-minMaxLength
