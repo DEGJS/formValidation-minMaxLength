@@ -26,7 +26,7 @@ const minMaxLength = (options) => {
         return new Promise((resolve, reject) => {
             if (field.inputEls) {
                 resolve({
-                    valid: field.inputEls.some(el => el.value.length === 0 || (el.value.length > 0 && meetsMin(el) && meetsMax(el)))
+                    valid: field.inputEls.some(el => el.value.length === 0 || (meetsMin(el) && meetsMax(el)))
                 });
             } else {
                 reject('minMaxLength: No inputs set.');
@@ -62,13 +62,13 @@ const minMaxLength = (options) => {
 
     function postprocessMessage(msg, field = {}) {
         if (settings.postprocessMessage && typeof settings.postprocessMessage === 'function') {
-            return settings.postprocessMessage(msg, settings);
-        } else {
-            const {minVal, maxVal} = getMinMaxValues(field);
-        	msg = msg.replace(settings.minToken, minVal);
-        	msg = msg.replace(settings.maxToken, maxVal);
-            return msg;
-        }
+            return settings.postprocessMessage(msg, settings, field);
+        } 
+
+        const {minVal, maxVal} = getMinMaxValues(field);
+        msg = msg.replace(settings.minToken, minVal);
+        msg = msg.replace(settings.maxToken, maxVal);
+        return msg;
     }
 
     return {

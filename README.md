@@ -19,7 +19,7 @@ After importing, formValidation rule modules can be instantiated by passing an a
 ```js
 import formValidation from "@degjs/form-validation";
 
-/* Import the Pattern rule module */
+/* Import the MinMaxLength rule module */
 import minMaxLength from "@degjs/form-validation-min-max-length";
 
 let validationOptions = {

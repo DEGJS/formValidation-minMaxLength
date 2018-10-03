@@ -172,12 +172,13 @@ describe('Form Validation: minMaxLength', () => {
 				],
 				postprocessMessage
 			}
-            const mockMessage = 'I am a mock message.';
+			const mockMessage = 'I am a mock message.';
+			const mockField = {};
             const minMaxLengthInst = minMaxLength(settings);
-            const retVal = minMaxLengthInst.postprocessMessage(mockMessage);
+            const retVal = minMaxLengthInst.postprocessMessage(mockMessage, mockField);
 
             expect(settings.postprocessMessage).toHaveBeenCalled();
-            expect(settings.postprocessMessage).toHaveBeenCalledWith(mockMessage, expectedSettings);
+            expect(settings.postprocessMessage).toHaveBeenCalledWith(mockMessage, expectedSettings, mockField);
             expect(retVal).toEqual('The message made it.');
         });
 
