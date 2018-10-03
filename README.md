@@ -1,27 +1,26 @@
 # formValidation-minMaxLength
+[![Build Status](https://travis-ci.com/DEGJS/formValidation-minMaxLength.svg?branch=master)](https://travis-ci.com/DEGJS/formValidation-minMaxLength)
+
 A minlength/maxlength rule module for the DEGJS [formValidation](https://github.com/DEGJS/formValidation) module.
 
 
 ## Install
-formValidation-minMaxLength is an ES6 module. Consequently, you'll need an ES6 transpiler ([Babel](https://babeljs.io) is a nice one) and a module loader ([SystemJS](https://github.com/systemjs/systemjs) will do the job) as part of your Javascript workflow.
+formValidation-minMaxLength is an ES6 module. Consequently, you'll need an ES6 transpiler ([Babel](https://babeljs.io) is a nice one) as part of your Javascript workflow.
 
-If you're already using [JSPM package manager](http://jspm.io) for your project, you can install formValidation-minMaxLength with the following command:
+If you're already using NPM for your project, you can install formValidation-minMaxLength with the following command:
 
 ```
-$ jspm install github:DEGJS/formValidation-minMaxLength
+$ npm install @degjs/form-validation-min-max-length
 ```
-
-Installing formValidation rule modules via JSPM will automatically install the base formValidation module.
-
 
 ## Usage
 After importing, formValidation rule modules can be instantiated by passing an array of names into a formValidation options object:
 
 ```js
-import formValidation from "DEGJS/formValidation";
+import formValidation from "@degjs/form-validation";
 
-/* Import the Pattern rule module */
-import minMaxLength from "DEGJS/formValidation-minMaxLength";
+/* Import the MinMaxLength rule module */
+import minMaxLength from "@degjs/form-validation-min-max-length";
 
 let validationOptions = {
     rules: [

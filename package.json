@@ -1,10 +1,12 @@
 {
-    "name": "formValidation-minMaxLength",
-    "version": "1.0.3",
+    "name": "@degjs/form-validation-min-max-length",
+    "version": "2.0.0",
     "description": "A minlength/maxlength rule for the DEGJS formValidation module.",
     "keywords": [
         "DEGJS",
-        "formValidation"
+        "formValidation",
+        "form",
+        "validation"
     ],
     "author": {
         "name": "Aaron Ladage",
@@ -23,29 +25,38 @@
         "url": "https://github.com/DEGJS/formValidation-minMaxLength.git"
     },
     "bugs": "https://github.com/DEGJS/formValidation-minMaxLength/issues",
-    "jspm": {
-        "registry": "jspm",
-        "format": "es6",
-        "main": "minMaxLength.js",
-        "directories": {
-            "lib": "src"
-        },
-        "peerDependencies": {
-            "DEGJS/formValidation": "github:DEGJS/formValidation@^1.0.0"
-        }
+    "files": [
+        "src"
+    ],
+    "main": "src/minMaxLength.js",
+    "publishConfig": {
+        "access": "public"
     },
     "scripts": {
         "test": "jest",
         "coverage": "jest --coverage && open coverage/index.html"
     },
-	"jest": {
-		"coverageReporters": ["html"]
-	},
+    "peerDependencies": {
+        "@degjs/form-validation": "^3.1.0"
+    },
+    "jest": {
+        "coverageReporters": [
+            "html"
+        ],
+        "testPathIgnorePatterns": [
+            "/node_modules/"
+        ]
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-env"
+        ]
+    },
     "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-jest": "^21.2.0",
-        "babel-preset-env": "^1.6.1",
-        "expect": "^21.2.1",
-        "jest": "^21.2.1"
+        "@babel/core": "^7.1.2",
+        "@babel/preset-env": "^7.1.0",
+        "babel-core": "^7.0.0-bridge.0",
+        "babel-jest": "^23.6.0",
+        "jest": "^23.6.0"
     }
 }
