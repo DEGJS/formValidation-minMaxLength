@@ -1,6 +1,6 @@
 {
     "name": "@degjs/form-validation-min-max-length",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "A minlength/maxlength rule for the DEGJS formValidation module.",
     "keywords": [
         "DEGJS",
@@ -49,14 +49,20 @@
     },
     "babel": {
         "presets": [
-            "@babel/preset-env"
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "node": "current"
+                    }
+                }
+            ]
         ]
     },
     "devDependencies": {
-        "@babel/core": "^7.1.2",
-        "@babel/preset-env": "^7.1.0",
-        "babel-core": "^7.0.0-bridge.0",
-        "babel-jest": "^23.6.0",
-        "jest": "^23.6.0"
+        "@babel/core": "^7.4.5",
+        "@babel/preset-env": "^7.4.5",
+        "babel-jest": "^24.8.0",
+        "jest": "^24.8.0"
     }
 }
