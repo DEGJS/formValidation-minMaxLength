@@ -22,20 +22,20 @@ import formValidation from "@degjs/form-validation";
 /* Import the MinMaxLength rule module */
 import minMaxLength from "@degjs/form-validation-min-max-length";
 
-let validationOptions = {
+const validationOptions = {
     rules: [
         minMaxLength
     ]
 };
 
 /* Instantiate the formValidation module on an element */
-let formElement = document.querySelector('.form');
-let validationInst = formValidation(formElement, validationOptions);
+const formElement = document.querySelector('.form');
+const validationInst = formValidation(formElement, validationOptions);
 ```
 
 Optionally, default rule settings can be overridden by instantiating the rule as a function and passing options as an object: 
 ```js
-let validationOptions = {
+const validationOptions = {
     rules: [
         minMaxLength({
             message: 'Please enter between [minToken] and [maxToken] characters.',
