@@ -1,5 +1,5 @@
 # formValidation-minMaxLength
-[![Build Status](https://travis-ci.com/DEGJS/formValidation-minMaxLength.svg?branch=master)](https://travis-ci.com/DEGJS/formValidation-minMaxLength)
+![Run Tests](https://github.com/DEGJS/formValidation-minMaxLength/workflows/Run%20Tests/badge.svg)
 
 A minlength/maxlength rule module for the DEGJS [formValidation](https://github.com/DEGJS/formValidation) module.
 
