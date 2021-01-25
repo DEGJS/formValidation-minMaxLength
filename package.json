@@ -1,6 +1,6 @@
 {
     "name": "@degjs/form-validation-min-max-length",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "A minlength/maxlength rule for the DEGJS formValidation module.",
     "keywords": [
         "DEGJS",
